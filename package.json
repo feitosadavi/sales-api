@@ -5,6 +5,7 @@
   "main": "server.ts",
   "scripts": {
     "dev": "nodemon --watch 'src/' --exec \"ts-node src/main/server.ts\" -e ts",
+    "lint": "eslint . --fix",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --watch --passWithNoTests --runInBand",
     "test:unit": "npm test -- --watch -c jest.unit.config.js",
