@@ -17,6 +17,7 @@ module.exports = {
   rules: {
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
+    'import/prefer-default-export': 'off',
     'no-console': 'off',
     'no-undef': 'off',
   },

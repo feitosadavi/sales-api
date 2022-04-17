@@ -10,8 +10,10 @@
     "test:verbose": "jest --watch --passWithNoTests --runInBand",
     "test:unit": "npm test -- --watch -c jest.unit.config.js",
     "test:integration": "npm test -- --watch -c jest.integration.config.js",
-    "test:staged": "npm test -- --findRelatedTests",
+    "test:staged": "npm test -- --findRelatedTests .",
     "test:ci": "npm test -- --coverage",
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "compile": "npm run build && node dist/main/server.js",
     "prepare": "husky install"
   },
   "repository": {
@@ -40,6 +42,7 @@
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "jest": "^27.5.1",
+    "module-alias": "^2.2.2",
     "nodemon": "^2.0.15",
     "supertest": "^6.2.2",
     "ts-jest": "^27.1.4",
@@ -52,6 +55,10 @@
     "eslint": "^8.13.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "husky": "^7.0.4"
+    "husky": "^7.0.4",
+    "rimraf": "^3.0.2"
+  },
+  "_moduleAliases": {
+    "@": "sales-api"
   }
 }
