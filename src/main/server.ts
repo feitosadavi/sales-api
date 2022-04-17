@@ -1,4 +1,4 @@
-import setupApp from './config/app';
+import { setupApp } from './config';
 
 const app = setupApp();
 

@@ -4,7 +4,7 @@
   "description": "An API for dealing with sales",
   "main": "server.ts",
   "scripts": {
-    "dev": "nodemon --watch 'src/' --exec \"ts-node src/main/server.ts\" -e ts",
+    "dev": "nodemon --watch 'src/' --exec \"ts-node -r tsconfig-paths/register src/main/server.ts\" -e ts",
     "lint": "eslint . --fix",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --watch --passWithNoTests --runInBand",
@@ -12,6 +12,7 @@
     "test:integration": "npm test -- --watch -c jest.integration.config.js",
     "test:staged": "npm test -- --findRelatedTests .",
     "test:ci": "npm test -- --coverage",
+    "test:clear": "jest --clearCache",
     "build": "rimraf dist && tsc -p tsconfig.build.json",
     "compile": "npm run build && node dist/main/server.js",
     "prepare": "husky install"
@@ -56,9 +57,13 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
     "husky": "^7.0.4",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "tsconfig-paths": "^3.14.1"
   },
   "_moduleAliases": {
-    "@": "sales-api"
+    "@": "dist"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }

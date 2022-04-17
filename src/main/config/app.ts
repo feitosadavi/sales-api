@@ -1,15 +1,16 @@
 import express, { Express } from 'express';
 import dotenv from 'dotenv';
 
-const setupApp = (): Express => {
+import setupRoutes from './routes';
+import { setupMiddlewares } from './middlewares';
+
+export const setupApp = (): Express => {
   dotenv.config();
 
   const app = express();
-  app.get('/', (_, res) => {
-    res.send('Hello ts-node!');
-  });
+
+  setupMiddlewares(app);
+  setupRoutes(app);
 
   return app;
 };
-
-export default setupApp;
