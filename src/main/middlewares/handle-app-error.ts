@@ -4,7 +4,7 @@ import {
   Response,
 } from 'express';
 
-import AppError from '../../presentation/errors/app-error';
+import AppError from '@/presentation/errors/app-error';
 
 // eslint-disable-next-line max-len
 export const handleAppError = (error: Error, _req: Request, res: Response, _next: NextFunction): Response<any, Record<string, any>> => {
