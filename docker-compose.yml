@@ -1,5 +1,13 @@
 version: "3"
 services:
+  postgres:
+    container_name: postgres_container
+    image: postgres:14
+    restart: always
+    volumes:
+      - ./data:/data/db
+    ports:
+      - 5432
   api:
     container_name: sales-api
     image: node:16
@@ -13,3 +21,5 @@ services:
       - ./tsconfig.build.json:/usr/src/sales-api/tsconfig.build.json
     ports:
       - "3000:3000"
+    links:
+      - postgres
