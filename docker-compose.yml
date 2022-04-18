@@ -1,0 +1,15 @@
+version: "3"
+services:
+  api:
+    container_name: sales-api
+    image: node:16
+    working_dir: /usr/src/sales-api
+    restart: always
+    command: bash -c "npm install --only=prod && npm run compile"
+    volumes:
+      - ./dist/:/usr/src/sales-api/dist/
+      - ./package.json:/usr/src/sales-api/package.json
+      - ./tsconfig.json:/usr/src/sales-api/tsconfig.json
+      - ./tsconfig.build.json:/usr/src/sales-api/tsconfig.build.json
+    ports:
+      - "3000:3000"

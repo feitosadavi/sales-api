@@ -13,9 +13,8 @@
     "test:staged": "npm test -- --findRelatedTests .",
     "test:ci": "npm test -- --coverage",
     "test:clear": "jest --clearCache",
-    "build": "rimraf dist && tsc -p tsconfig.build.json",
-    "compile": "npm run build && node dist/main/server.js",
-    "prepare": "husky install"
+    "build": "tsc -p tsconfig.build.json",
+    "compile": "npm run build && node dist/main/server.js"
   },
   "repository": {
     "type": "git",
