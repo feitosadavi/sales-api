@@ -1,7 +1,7 @@
 import { DbLoadProductById } from '@/data/usecases';
 import { ILoadProductByIdRepository } from '@/data/protocols';
 
-import { mockLoadProductByIdRepository } from './mocks/product.mocks';
+import { mockLoadProductByIdRepository } from '../mocks/product.mocks';
 
 type SutType = {
   sut: DbLoadProductById,
@@ -17,22 +17,22 @@ const makeSut = (): SutType => {
   };
 };
 
-describe('ProductsRepository', () => {
-  test('should DBLoadProductById call loadById with correct params', async () => {
+describe('DBLoadProductById', () => {
+  test('should call loadById with correct params', async () => {
     const { sut, loadProductByIdRepositoryStub } = makeSut();
     const loadByIdSpy = jest.spyOn(loadProductByIdRepositoryStub, 'loadById');
     await sut.exec('any_id');
     expect(loadByIdSpy).toHaveBeenCalledWith('any_id');
   });
 
-  test('should DBLoadProductById call loadById with correct params', async () => {
+  test('should call loadById with correct params', async () => {
     const { sut, loadProductByIdRepositoryStub } = makeSut();
     jest.spyOn(loadProductByIdRepositoryStub, 'loadById').mockImplementationOnce(() => { throw new Error(); });
     const promise = sut.exec('any_id');
     await expect(promise).rejects.toThrow();
   });
 
-  test('should DBLoadProductById return a product', async () => {
+  test('should return a product', async () => {
     const { sut } = makeSut();
     const product = await sut.exec('any_id');
     expect(product.id).toBe('any_id');

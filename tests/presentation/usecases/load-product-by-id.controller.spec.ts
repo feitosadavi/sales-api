@@ -2,9 +2,9 @@ import MockDate from 'mockdate';
 
 import { ILoadProductById } from '@/domain/usecases';
 import { LoadProductByIdController } from '@/presentation/controllers';
-import { makeFakeProductsModel } from '../domain/fakes/fake-products';
+import { makeFakeProductsModel } from '../../domain/fakes/fake-products';
 
-import { mockLoadProductById } from './mocks/product.mocks';
+import { mockLoadProductById } from '../mocks/product.mocks';
 
 type SutType = {
   sut: LoadProductByIdController,

@@ -6,8 +6,9 @@ class LoadProductByIdController implements Controller<{id: string}> {
 
   async handle(request: any): Promise<HttpResponse> {
     try {
+      console.log(request);
       const { id } = request;
-      console.log(id);
+      console.log('loadProductById');
       const product = await this.loadProductById.exec(id);
       console.log({ product });
       return {
@@ -15,6 +16,7 @@ class LoadProductByIdController implements Controller<{id: string}> {
         body: product || { product: {} },
       };
     } catch (error) {
+      console.log(error);
       return {
         statusCode: 500,
         body: {

@@ -1,10 +1,10 @@
 import { Product } from '@/domain/entities';
 
-export interface ICreateProductByIdRepository {
-  create(id: ICreateProductByIdRepository.Params): Promise<ICreateProductByIdRepository.Result>
+export interface ICreateProductRepository {
+  create(id: ICreateProductRepository.Params): Promise<ICreateProductRepository.Result>
 }
 
-export namespace ICreateProductByIdRepository {
+export namespace ICreateProductRepository {
   export type Params = Omit<Product, 'id' | 'created_at' | 'updated_at'>
   export type Result = Product
 }
