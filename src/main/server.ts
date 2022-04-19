@@ -1,4 +1,4 @@
-import { AppDataSource } from '@/infra/repos/postgres/data-source';
+import AppDataSource from '@/infra/repos/postgres/data-source';
 import { setupApp } from './config';
 import 'reflect-metadata';
 

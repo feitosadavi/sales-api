@@ -4,7 +4,7 @@
   "description": "An API for dealing with sales",
   "main": "server.ts",
   "scripts": {
-    "dev": "nodemon --watch 'src/' --exec \"ts-node -r tsconfig-paths/register src/main/server.ts\" -e ts",
+    "dev": "nodemon --watch 'src/' --exec \"ts-node-dev -r tsconfig-paths/register src/main/server.ts\" -e ts",
     "lint": "eslint . --fix",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --watch --passWithNoTests --runInBand",
@@ -14,7 +14,9 @@
     "test:ci": "npm test -- --coverage",
     "test:clear": "jest --clearCache",
     "build": "tsc -p tsconfig.build.json",
-    "compile": "npm run build && node dist/main/server.js"
+    "compile": "npm run build && node dist/main/server.js",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
+    "migrations": "ts-node-dev ./node_modules/typeorm/cli.js migration:run -d src/infra/repos/postgres/data-source.ts"
   },
   "repository": {
     "type": "git",
@@ -59,7 +61,9 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
     "husky": "^7.0.4",
+    "mockdate": "^3.0.5",
     "rimraf": "^3.0.2",
+    "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.14.1"
   },
   "_moduleAliases": {

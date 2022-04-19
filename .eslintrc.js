@@ -20,5 +20,11 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'no-console': 'off',
     'no-unused-vars': 'off',
+    'no-redeclare': 'off',
+    'no-undef': 'off',
+    'no-useless-constructor': 'off',
+    'no-empty-function': 'off',
+    'class-methods-use-this': 'off',
+    'max-len': 'off',
   },
 };

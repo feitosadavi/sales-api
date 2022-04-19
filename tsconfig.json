@@ -3,6 +3,10 @@
     "outDir": "captacao-api",
     "module": "commonjs",
     "target": "es2019",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    // "strictPropertyInitialization": true,
+    // "strictNullChecks": true,
     "esModuleInterop": true,
     "sourceMap": false,
     "rootDirs": [
@@ -11,12 +15,12 @@
     ],
     "baseUrl": "src",
     "paths": {
-      "@tests/*": [
-        "../tests/*"
-      ],
       "@/*": [
         "*"
-      ]
+      ],
+      // "@app/*": [
+      //   "src/*"
+      // ]
     }
   },
   "include": [
