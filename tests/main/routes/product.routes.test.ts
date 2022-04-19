@@ -4,7 +4,6 @@ import { Express } from 'express';
 import { Repository } from 'typeorm';
 import { setupApp } from '@/main/config';
 
-import 'reflect-metadata';
 import { AppDataSource } from '@/infra/repos/postgres';
 import { ProductEntity } from '@/infra/repos/postgres/entities';
 
