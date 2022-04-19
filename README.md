@@ -83,6 +83,8 @@ The API endpoints are descripted below.
         updated_at: ''
     }
 
+### Request
+
 `POST /products/create`
 
     curl -X POST -H "Content-Type: application/json" \
@@ -92,6 +94,7 @@ The API endpoints are descripted below.
                 "quantity": 3,    
             }' \
         http://localhost:3000/products/:id
+
 ### Response
 
     HTTP/1.1 200 OK
@@ -106,7 +109,7 @@ The API endpoints are descripted below.
     Connection: keep-alive
     Keep-Alive: timeout=5
     
-    "product":{
+    {
         "id": "58e9e089-0346-4917-b784-cb6c4be906e7",
         "name": "Camisa", 
         "price": 50,
